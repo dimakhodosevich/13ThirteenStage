@@ -9,8 +9,8 @@ public class ExtremeFindMaxTest {
     private static double[] actual_arraySameNumbers;
     private static double expected_difNumber;
     private static double expected_sameNumber;
-    private static double expected_null;
-    private static double expected_zero;
+    private static int expected_null;
+    private static int expected_zero;
     private static double delta;
 
     static {

@@ -5,7 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static by.itstep.khodosevich.thirteenstage.task01.module.logic.Extreme.*;
 
-public class ExtremeFindMinTest {
+public class ExtremeGetAverageValueTest {
+
     private static double[] actual_arrayDifNumbers;
     private static double[] actual_arraySameNumbers;
     private static double expected_difNumber;
@@ -17,7 +18,7 @@ public class ExtremeFindMinTest {
     static {
         actual_arrayDifNumbers = new double[]{3.5, -1.4, 17.0, 7.2, -1, 9, -2};
         actual_arraySameNumbers = new double[]{7, 7, 7, 7, 7, 7};
-        expected_difNumber = -2;
+        expected_difNumber = 4.614;
         expected_sameNumber = 7.0;
         expected_null = Integer.MIN_VALUE;
         expected_zero = Integer.MIN_VALUE + 1;
@@ -25,27 +26,26 @@ public class ExtremeFindMinTest {
     }
 
     @Test
-    public void testFindIndexMaxElementPositiveDifNumbers() {
-        int actual_minIndex = findIndexMinElement(actual_arrayDifNumbers);
-        assertEquals(expected_difNumber, actual_arrayDifNumbers[actual_minIndex], delta);
+    public void testGetAverageValuePositiveDifNumbers() {
+        double actual = getAverageValue(actual_arrayDifNumbers);
+        assertEquals(expected_difNumber, actual, delta);
     }
 
     @Test
-    public void testFindIndexMaxElementPositiveSameNumbers() {
-        int actual_minIndex = findIndexMinElement(actual_arraySameNumbers);
-        assertEquals(expected_sameNumber, actual_arraySameNumbers[actual_minIndex], delta);
+    public void testGetAverageValuePositiveSameNumbers() {
+        double actual = getAverageValue(actual_arraySameNumbers);
+        assertEquals(expected_sameNumber, actual, delta);
     }
 
     @Test
-    public void testFindIndexMaxElementNegativeWithNull() {
-        int actual_minIndex = findIndexMinElement(null);
-        assertEquals(expected_null, actual_minIndex);
+    public void testGetAverageValueNegativeWithNull() {
+        double actual_minIndex = getAverageValue(null);
+        assertEquals(expected_null, actual_minIndex, delta);
     }
 
     @Test
-    public void testFindIndexMaxElementNegativeWithZeroLength() {
-        int actual_minIndex = findIndexMinElement(new double[0]);
-        assertEquals(expected_zero, actual_minIndex);
+    public void testGetAverageValueNegativeWithZeroLength() {
+        double actual_minIndex = getAverageValue(new double[0]);
+        assertEquals(expected_zero, actual_minIndex, delta);
     }
-
 }

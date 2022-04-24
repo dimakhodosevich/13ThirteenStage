@@ -9,6 +9,8 @@ public class Extreme {
         ERROR_ZERO_LENGTH_ARRAY = "Your array has zero size!!!";
     }
 
+    private Extreme(){}
+
     public static int findIndexMaxElement(double[] array) {
         if (array == null) {
             System.err.println(ERROR_NULL_ARRAY);

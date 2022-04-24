@@ -32,7 +32,25 @@ public class Extreme {
     }
 
     public static int findIndexMinElement(double[] array){
-        return 0;
+        if(array==null){
+            System.err.println(ERROR_NULL_ARRAY);
+            return Integer.MIN_VALUE;
+        }
+
+        if(array.length==0){
+            System.err.println(ERROR_ZERO_LENGTH_ARRAY);
+            return Integer.MIN_VALUE+1;
+        }
+
+        int minIndex = 0;
+
+        for(int i = 1; i<array.length; i++){
+            if(array[minIndex]>array[i]){
+                minIndex = i;
+            }
+        }
+
+        return minIndex;
     }
 
     public static int getAverageValue(double[] array){

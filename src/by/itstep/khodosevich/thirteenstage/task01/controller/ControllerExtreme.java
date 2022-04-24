@@ -16,27 +16,37 @@ public class ControllerExtreme {
 
 
     public static void main(String[] args) {
-        Printer.print("Input size of your array: ");
-        int size = SCANNER.nextInt();
 
-        if (size < 0) {
-            System.err.println("Your array has negative size!!!");
+        try {
+            Printer.print("Input size of your array: ");
+            int size = SCANNER.nextInt();
+
+            if (size < 0) {
+                System.err.println("Your array has negative size!!!");
+            }
+
+            double[] array = new double[size];
+
+            for (int i = 0; i < array.length; i++) {
+                array[i] = RANDOM.nextDouble(MAX - MIN + 1) + MIN;
+            }
+
+            String message = String.format("Your array is: %s.\n", Arrays.toString(array));
+            Printer.print(message);
+            message = String.format("Max element in your array is: %.2f.\n",
+                    array[findIndexMaxElement(array)]);
+            Printer.print(message);
+            message = String.format("Min element in your array is: %.2f.\n",
+                    array[findIndexMinElement(array)]);
+            Printer.print(message);
+            message = String.format("Average value of your array is: %.2f.\n",
+                    getAverageValue(array));
+            Printer.print(message);
+
+        } catch (Exception e) {
+            System.err.println("Something went wrong. Catch for unexpected exception!!!");
+            e.getStackTrace();
         }
-
-        double[] array = new double[size];
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = RANDOM.nextDouble(MAX - MIN + 1) + MIN;
-        }
-
-        String message = String.format("Your array is: %s.\n", Arrays.toString(array));
-        Printer.print(message);
-        String message1 = String.format("Max element in your array is: %.2f.\n", array[findIndexMaxElement(array)]);
-        Printer.print(message1);
-        String message2 = String.format("Min element in your array is: %.2f.\n", array[findIndexMinElement(array)]);
-        Printer.print(message2);
-        String message3 = String.format("Average value of your array is: %.2f.\n", getAverageValue(array));
-        Printer.print(message3);
 
     }
 }

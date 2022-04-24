@@ -38,13 +38,9 @@ public class Subsequence {
                 }
             }
 
-            if (i == 0) {
-                result = sum;
-            } else if ((sum > result || result == 0) && sum != 0) {
+            if ((sum > result || result == 0) && sum != 0) {
                 result = sum;
             }
-
-
         }
 
         if (result == averageValue) {

@@ -6,15 +6,15 @@ import static org.junit.Assert.*;
 import static by.itstep.khodosevich.thirteenstage.task06.module.logic.PalindromeArray.*;
 
 public class PalindromeArrayTest {
-    private static int[] arrayPalindromeOdd;
-    private static int[] arrayPalindromeParity;
-    private static int[] arrayBasic;
+    private static double[] arrayPalindromeOdd;
+    private static double[] arrayPalindromeParity;
+    private static double[] arrayBasic;
     private static String ERROR_MESSAGE;
 
     static {
-        arrayPalindromeOdd = new int[]{1, 2, 3, 2, 1};
-        arrayPalindromeParity = new int[]{1, 2, 3, 3, 2, 1};
-        arrayBasic = new int[]{1, 2, 3, 4, 5};
+        arrayPalindromeOdd = new double[]{1, 2, 3, 2, 1};
+        arrayPalindromeParity = new double[]{1, 2, 3, 3, 2, 1};
+        arrayBasic = new double[]{1, 2, 3, 4, 5};
         ERROR_MESSAGE = "Your method works bad!!!";
     }
 
@@ -44,7 +44,7 @@ public class PalindromeArrayTest {
 
     @Test
     public void testIsPalindromeArrayNegativeWithZero() {
-        boolean actual = isPalindromeArray(new int[0]);
+        boolean actual = isPalindromeArray(new double[0]);
         assertFalse(ERROR_MESSAGE, actual);
     }
 }

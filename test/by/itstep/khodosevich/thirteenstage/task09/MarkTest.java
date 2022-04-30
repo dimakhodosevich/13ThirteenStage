@@ -48,6 +48,4 @@ public class MarkTest {
         double[] actual = getMarkStatus(marks, -1);
         assertEquals(ERROR_WITH_BAD_MARK_SYSTEM, actual[0], delta);
     }
-
-
 }

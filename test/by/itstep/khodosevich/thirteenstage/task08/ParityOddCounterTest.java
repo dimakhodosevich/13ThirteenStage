@@ -18,9 +18,9 @@ public class ParityOddCounterTest {
 
     static {
         array = new double[]{1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
-        expectedParity = 12.0;
+        expectedParity = 9.0;
         expectedAll = 21.0;
-        expectedOdd = 9.0;
+        expectedOdd = 12.0;
         delta = 0.001;
         ERROR_WITH_NULL = Integer.MIN_VALUE;
         ERROR_WITH_ZERO_LENGTH = Integer.MIN_VALUE + 1;

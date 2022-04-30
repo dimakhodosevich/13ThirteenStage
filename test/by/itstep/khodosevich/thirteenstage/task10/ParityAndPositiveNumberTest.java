@@ -14,9 +14,9 @@ public class ParityAndPositiveNumberTest {
 
 
     static {
-        array = new double[]{1, 2, 3, 4, 5, 6, 7};
+        array = new double[]{1, 2, -3, 4, 5, 6, 7};
         delta = 0.001;
-        expected = 15.0;
+        expected = 13.0;
         errorWIthNull = Integer.MIN_VALUE;
         errorWithZeroLength = Integer.MIN_VALUE + 1;
     }

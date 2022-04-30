@@ -1,21 +1,20 @@
-package by.itstep.khodosevich.thirteenstage.task06.controller;
+package by.itstep.khodosevich.thirteenstage.task07.controller;
 
 import by.itstep.khodosevich.thirteenstage.view.Printer;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static by.itstep.khodosevich.thirteenstage.task06.module.logic.PalindromeArray.*;
+import static by.itstep.khodosevich.thirteenstage.task07.module.logic.SameArray.*;
 
-public class ControllerPalindromeArray {
+public class ControllerSameArray {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         try {
             Printer.print("Input size of your array:\n");
             int size = scanner.nextInt();
             if (size <= 1) {
-                System.err.println("Your array has negative size of size = 1!!!");
+                System.err.println("Your array has negative size or size = 1!!!");
                 return;
             }
             double[] array = new double[size];
@@ -24,12 +23,11 @@ public class ControllerPalindromeArray {
                 array[i] = scanner.nextDouble();
             }
 
-            String message = String.format("Is your array: %s palindrome? \nAnswer: %b.\n",
-                    Arrays.toString(array), isPalindromeArray(array));
+            String message = String.format("Does your array: %s has the same elements? \nAnswer: %b.\n",
+                    Arrays.toString(array), isAllElementArrayTheSame(array));
             Printer.print(message);
-
         } catch (Exception exception) {
-            Printer.print("Something went wrong. Look at stack trace!!!\n");
+            Printer.printError("Something went wrong. Look at stack trace!!!");
             exception.getStackTrace();
         } finally {
             scanner.close();

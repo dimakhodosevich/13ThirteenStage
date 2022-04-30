@@ -21,8 +21,9 @@ public class ControllerExtreme {
             Printer.print("Input size of your array: ");
             int size = SCANNER.nextInt();
 
-            if (size < 0) {
-                System.err.println("Your array has negative size!!!");
+            if (size <= 1) {
+                System.err.println("Your array has negative size or size =1!!!");
+                return;
             }
 
             double[] array = new double[size];
